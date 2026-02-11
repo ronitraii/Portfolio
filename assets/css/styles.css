@@ -139,15 +139,21 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 0 20px;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0;
 }
 
 nav a {
@@ -157,11 +163,16 @@ nav a {
   transition: var(--transition);
   padding: 8px 12px;
   border-radius: 6px;
+  display: inline-block;
 }
 
 nav a:hover {
   color: var(--secondary-color);
   background: rgba(127, 209, 189, 0.1);
+}
+
+body.light-mode nav a {
+  color: var(--text-color);
 }
 
 body.light-mode nav a:hover {
@@ -703,6 +714,22 @@ section:nth-child(even) {
   color: var(--secondary-color);
 }
 
+/* Project Badges */
+.project-badge {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.project-badge-masters {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
 /* ===== Project Categories & FYP ===== */
 .project-category {
   margin-top: 2.5rem;
@@ -715,6 +742,7 @@ section:nth-child(even) {
   font-size: 1.6rem;
   color: var(--text-color);
   margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .category-title i {
@@ -1094,6 +1122,15 @@ section h2 i {
   color: var(--primary-color);
 }
 
+/* Section description text */
+.section-description {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 /* ===== Skills Cards ===== */
 .skill-card {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -1143,6 +1180,28 @@ section h2 i {
   font-size: 32px;
   color: var(--primary-color);
   margin-bottom: 10px;
+}
+
+.contact-item h3 {
+  color: var(--text-color);
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.contact-item p {
+  color: var(--text-light);
+}
+
+.contact-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
 }
 
 /* ===== Footer Styles ===== */
