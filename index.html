@@ -407,6 +407,142 @@
             border-radius: 10px;
         }
         
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #8fb3c1, #56b39d);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-content {
+            background: rgba(42, 50, 64, 0.6);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 45%;
+            position: relative;
+        }
+        
+        body.light-mode .timeline-content {
+            background: #f8f9fa;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #8fb3c1, #56b39d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .timeline-content h3 {
+            color: #8fb3c1;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        body.light-mode .timeline-content h3 {
+            color: #4f6d7a;
+        }
+        
+        .timeline-content h4 {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        body.light-mode .timeline-content h4 {
+            color: #666;
+        }
+        
+        .timeline-content p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        
+        body.light-mode .timeline-content p {
+            color: #555;
+        }
+        
+        .experience-highlights {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        .experience-highlights li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+        
+        body.light-mode .experience-highlights li {
+            color: #555;
+        }
+        
+        .experience-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #56b39d;
+            font-weight: bold;
+        }
+        
+        /* Research Interests */
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .research-tag {
+            background: linear-gradient(135deg, #4f6d7a, #56b39d);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .research-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(86, 179, 157, 0.3);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .about-content {
@@ -424,6 +560,19 @@
             section {
                 padding: 20px;
             }
+            
+            .timeline::before {
+                left: 25px;
+            }
+            
+            .timeline-icon {
+                left: 25px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin-left: 60px !important;
+            }
         }
     </style>
 </head>
@@ -435,7 +584,9 @@
                 <div class="logo">Ronit Rai</div>
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -468,6 +619,21 @@
             </div>
         </section>
 
+        <!-- Research Interests Section -->
+        <section id="research">
+            <h2><i class="fas fa-lightbulb"></i> Research Interests</h2>
+            <p style="color: #cbd5e1; margin-bottom: 20px; text-align: center;">Areas of focus for Master's studies in Cybersecurity and AI</p>
+            <div class="research-tags">
+                <span class="research-tag">Adversarial Machine Learning</span>
+                <span class="research-tag">Digital Forensics</span>
+                <span class="research-tag">Cloud Security</span>
+                <span class="research-tag">Deepfake / Image Forgery Detection</span>
+                <span class="research-tag">AI for Cybersecurity</span>
+                <span class="research-tag">Intrusion Detection & Prevention (IDS/IPS)</span>
+                <span class="research-tag">AI-driven Threats & Data Safety</span>
+            </div>
+        </section>
+
         <!-- Skills Section -->
         <section id="skills">
             <h2><i class="fas fa-code"></i> Technical Skills</h2>
@@ -495,6 +661,61 @@
                 <div class="skill-card">
                     <h3>Digital Forensics</h3>
                     <p>Image Analysis, Deepfake Detection, Manipulation Detection</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            <p style="color: #cbd5e1; margin-bottom: 20px; text-align: center;">Hands-on cybersecurity internships with industry leaders</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Digital Forensics Intern</h3>
+                        <h4>Cyborts · Remote · Jul 2025</h4>
+                        <p>Investigated the digital forensics lifecycle including evidence collection, preservation, and analysis; examined system artifacts to reconstruct incidents while applying chain-of-custody procedures.</p>
+                        <ul class="experience-highlights">
+                            <li>Investigated evidence collection, preservation, and analysis workflows</li>
+                            <li>Examined system artifacts to reconstruct security incidents</li>
+                            <li>Applied chain-of-custody procedures for evidentiary integrity</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <h4>Developers Hub Corporation · Remote · Apr 2025 – May 2025</h4>
+                        <p>Assessed web applications for OWASP Top 10 vulnerabilities, performed penetration testing, and conducted security audits and code reviews to improve security posture.</p>
+                        <ul class="experience-highlights">
+                            <li>Assessed apps for OWASP Top 10 (SQLi, XSS, etc.)</li>
+                            <li>Performed pentesting with Burp Suite, Wireshark, and Kali Linux</li>
+                            <li>Conducted security audits and code reviews to identify vulnerabilities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <h4>Nuexus Technologies · Remote · Sep 2025 – Dec 2025</h4>
+                        <p>Focused on enumeration, exploitation, and defensive techniques through hands-on challenges and network reconnaissance; built automation to accelerate assessments.</p>
+                        <ul class="experience-highlights">
+                            <li>Completed 10+ Hack The Box challenges (enum, exploitation, defense)</li>
+                            <li>Conducted network reconnaissance using Nmap (ports/services)</li>
+                            <li>Developed Python-based port scanner reducing manual time by 60%</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
