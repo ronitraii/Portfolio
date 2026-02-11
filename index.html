@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ronit Rai – Portfolio in Cybersecurity, Digital Forensics, and AI for Security. Projects in IDS/IPS, threat intelligence, and image forgery detection.">
+    <meta name="keywords" content="Cybersecurity, AI Security, IDS, IPS, Digital Forensics, Threat Intelligence, Deepfake Detection, Portfolio, Ronit Rai">
+    <title>Ronit Rai - Cybersecurity & AI Research Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f7fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header/Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f6d7a;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #4f6d7a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: 15px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .hero .subtitle {
+            font-size: 24px;
+            color: #4f6d7a;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4f6d7a 0%, #56b39d 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(79, 109, 122, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #4f6d7a;
+            border: 2px solid #4f6d7a;
+        }
+        
+        .btn-secondary:hover {
+            background: #4f6d7a;
+            color: white;
+        }
+        
+        /* Sections */
+        section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        section h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        section h2 i {
+            color: #4f6d7a;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-card {
+            background: linear-gradient(135deg, #4f6d7a 0%, #56b39d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .skill-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .skill-card p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-category {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-title i {
+            color: #4f6d7a;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(79, 109, 122, 0.2);
+            border-color: #4f6d7a;
+        }
+        
+        .project-icon {
+            font-size: 36px;
+            color: #4f6d7a;
+            margin-bottom: 15px;
+        }
+        
+        .project-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .project-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, #4f6d7a 0%, #56b39d 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .project-link {
+            color: #4f6d7a;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+        
+        .project-link:hover {
+            color: #56b39d;
+            gap: 12px;
+        }
+        
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-content p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .profile-image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(79, 109, 122, 0.08) 0%, rgba(86, 179, 157, 0.08) 100%);
+            border-radius: 10px;
+        }
+        
+        .contact-item i {
+            font-size: 32px;
+            color: #4f6d7a;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #4f6d7a 0%, #56b39d 100%);
+            border-radius: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <nav>
+                <div class="logo">Ronit Rai</div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Ronit Rai</h1>
+            <p class="subtitle">Cybersecurity Expert & Machine Learning Researcher</p>
+            <p>Building AI-powered security systems and threat intelligence platforms. Specializing in deep learning for digital forensics, penetration testing, and malware detection.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <div class="about-content">
+                <div>
+                    <p>I'm a cybersecurity researcher and machine learning enthusiast pursuing advanced studies in cybersecurity. My work focuses on applying cutting-edge AI techniques to solve real-world security challenges.</p>
+                    <p>With expertise in deep learning, threat intelligence, and penetration testing, I develop practical solutions for digital forensics, malware detection, and vulnerability assessment.</p>
+                    <p>I'm passionate about building tools that make cybersecurity more effective and accessible, from image forgery detection systems to comprehensive threat intelligence platforms.</p>
+                </div>
+                <img src="assets/images/profile/img.jpg" alt="Profile" class="profile-image">
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Python & ML</h3>
+                    <p>PyTorch, TensorFlow, Scikit-learn, Advanced ML architectures</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cybersecurity</h3>
+                    <p>Penetration Testing, Malware Analysis, IDS/IPS, Threat Intelligence</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Deep Learning</h3>
+                    <p>CNNs, GANs, Ensemble Methods, Computer Vision</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Development</h3>
+                    <p>Flask, Next.js, React, REST APIs, Docker</p>
+                </div>
+                <div class="skill-card">
+                    <h3>DevOps & CI/CD</h3>
+                    <p>GitHub Actions, Docker, Containerization, Automated Testing</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Digital Forensics</h3>
+                    <p>Image Analysis, Deepfake Detection, Manipulation Detection</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2><i class="fas fa-shield-alt"></i> My Projects</h2>
+            
+            <!-- Cybersecurity Projects -->
+            <div class="project-category">
+                <h3 class="category-title"><i class="fas fa-shield-alt"></i> Cybersecurity & Digital Forensics</h3>
+                <div class="projects-grid">
+                    <!-- GitHub Project 1: Image Manipulation Detection -->
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>AI-Based Image Manipulation Detection <span style="background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; margin-left: 5px;">GitHub</span></h3>
+                        <p>Production-ready deep learning system detecting image forgery, deepfakes, and face manipulation. Features CNN-based analysis with PyTorch, Flask REST API, Next.js frontend, Docker containerization, and GitHub Actions CI/CD pipeline.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">CNN</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">13 Commits</span>
+                        </div>
+                        <a href="https://github.com/ronitraii/image-manipulation-detection" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+                    </div>
+
+                    <!-- GitHub Project 2: Web Vulnerability Scanner -->
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Web Vulnerability Scanner <span style="background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; margin-left: 5px;">GitHub</span></h3>
+                        <p>Comprehensive penetration testing framework for identifying web application vulnerabilities. Detects SQL injection, XSS, CSRF, security headers. Tested against DVWA with detailed reporting capabilities.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Penetration Testing</span>
+                            <span class="tag">DVWA</span>
+                            <span class="tag">Web Security</span>
+                            <span class="tag">9 Commits</span>
+                        </div>
+                        <a href="https://github.com/ronitraii/web-vulnerability-scanner" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+                    </div>
+
+                    <!-- GitHub Project 3: Threat Intelligence Hub -->
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Threat Intelligence Hub <span style="background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; margin-left: 5px;">Master's Ready</span></h3>
+                        <p>Research-grade 4-module threat detection platform. Modules: Network IDS (95% accuracy), Enhanced Log Analysis, Malware Detection (91.5%), Incident Response Dashboard. Built over 1.5 months with REST API and web dashboard.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Ensemble ML</span>
+                            <span class="tag">IDS/IPS</span>
+                            <span class="tag">Threat Analysis</span>
+                            <span class="tag">Flask API</span>
+                            <span class="tag">11 Commits</span>
+                        </div>
+                        <a href="https://github.com/ronitraii/threat-intelligence-hub" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Projects -->
+            <div class="project-category">
+                <h3 class="category-title"><i class="fas fa-microscope"></i> Research & Development</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Network Traffic Analysis</h3>
+                        <p>Analyzing network patterns for anomaly detection using machine learning algorithms. Implements automated packet inspection and behavioral analysis.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scapy</span>
+                            <span class="tag">Network Analysis</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Cryptanalysis Framework</h3>
+                        <p>Educational cryptanalysis tools and frameworks for understanding modern encryption methods and potential vulnerabilities.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Cryptography</span>
+                            <span class="tag">Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:ronitganglani5@gmail.com" style="color: #4f6d7a; text-decoration: none;">ronitganglani5@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/ronitraii" target="_blank" style="color: #4f6d7a; text-decoration: none;">@ronitraii</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/ronitganglani/" target="_blank" style="color: #4f6d7a; text-decoration: none;">Ronit Rai</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Ronit Rai. All rights reserved. | Cybersecurity & Machine Learning</p>
+        </footer>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

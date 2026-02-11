@@ -1,0 +1,8 @@
+# Robots.txt for Ronit Rai Portfolio
+# Discourage indexing of sensitive documents while allowing the site content
+User-agent: *
+Disallow: /assets/documents/
+Disallow: /assets/documents/certificates/
+Allow: /
+
+# Note: Search engines generally honor robots.txt, but it is not access control.

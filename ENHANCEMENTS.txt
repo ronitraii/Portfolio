@@ -1,0 +1,83 @@
+=== PORTFOLIO ENHANCEMENT RECOMMENDATIONS ===
+
+Your current portfolio is good but can be significantly improved for Master's applications.
+
+CURRENT STATUS:
+ Professional design and layout
+ Multiple sections (About, Skills, Projects, Certificates)
+ Responsive design
+ Dark/Light theme toggle
+ Located projects section
+
+RECOMMENDED ENHANCEMENTS:
+
+1. **ADD YOUR 3 GITHUB PROJECTS TO PROJECTS SECTION**
+   These are your strongest work for a Master's portfolio:
+   
+   a) IMAGE MANIPULATION DETECTION (Cybersecurity + AI/ML)
+      - Link: https://github.com/ronitraii/image-manipulation-detection
+      - Stack: Python Flask, Next.js, PyTorch, Deep Learning
+      - Highlights: CNN-based forgery detection, CI/CD pipeline, Docker
+      - Impact: Perfect for Master's in Cybersecurity
+      
+   b) WEB VULNERABILITY SCANNER (Cybersecurity)
+      - Link: https://github.com/ronitraii/web-vulnerability-scanner
+      - Stack: Python Flask, Security Testing, Network Analysis
+      - Highlights: DVWA testing, vulnerability detection, reporting
+      - Impact: Shows penetration testing experience
+      
+   c) THREAT INTELLIGENCE HUB (Cybersecurity + ML)
+      - Link: https://github.com/ronitraii/threat-intelligence-hub
+      - Stack: Python, Flask, Machine Learning, Ensemble Methods
+      - Highlights: 4-module system, 95% accuracy detection, 1.5-month development
+      - Impact: Research-level project, perfect for thesis prep
+
+2. **UPDATE CV LINK**
+   - Current: assets/documents/cv/Ronit_Rai_Resume.pdf
+   - Suggested: Add latest CV from D:\Education\old resumes\Ronit Rai Resume_CS.pdf (Dec 17, 2025)
+
+3. **ADD GITHUB STATS & LIVE LINKS**
+   - Add GitHub profile link
+   - Show commit activity
+   - Add live demo links where applicable
+
+4. **ENHANCE PROJECTS SECTION**
+   - Replace placeholder projects with GitHub projects
+   - Add GitHub links, commit counts, stars
+   - Add deployment/demo links
+   - Add tech stack with version numbers
+
+5. **ADD RESEARCH INTERESTS ALIGNMENT**
+   - Link research interests to your projects
+   - Show how projects relate to Master's focus areas
+
+6. **IMPROVE EXPERIENCE SECTION**
+   - Add skills gained from each internship
+   - Link to certificates and achievements
+
+7. **ADD TECHNICAL BLOG/INSIGHTS** (optional)
+   - Security insights
+   - Machine learning approaches
+   - Project writeups
+
+8. **CONTACT SECTION IMPROVEMENTS**
+   - Add GitHub profile link
+   - Add LinkedIn
+   - Add email with subject template
+   - Add GitHub stars/followers widget
+
+PRIORITY ACTIONS:
+1.  Replace sample projects with your 3 GitHub projects
+2.  Add GitHub repository links with stats
+3.  Update CV to latest version
+4.  Add live badges (GitHub, build status, etc.)
+5. Add research paper/thesis links
+6. Add LinkedIn profile
+7. Add contact methods
+
+CONTENT SUGGESTIONS:
+- Show GitHub commit graphs
+- Add "Open Source Contributions" section if available
+- Add "Publications" section if you have papers
+- Add "Public Speaking" if applicable
+- Add "Certifications" with verification links
