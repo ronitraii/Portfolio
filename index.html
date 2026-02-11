@@ -18,9 +18,15 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: #e5e7eb;
+            background: linear-gradient(135deg, #1a1f2a 0%, #232a36 100%);
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode {
             color: #333;
             background: linear-gradient(135deg, #f7fafc 0%, #f1f5f9 100%);
-            min-height: 100vh;
         }
         
         .container {
@@ -31,80 +37,129 @@
         
         /* Header/Navigation */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(42, 50, 64, 0.95);
             padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             margin-bottom: 40px;
             border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         
         .logo {
             font-size: 24px;
             font-weight: bold;
+            color: #8fb3c1;
+        }
+        
+        body.light-mode .logo {
             color: #4f6d7a;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 20px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
         }
         
         #theme-toggle {
-            background: #4f6d7a;
+            background: #56b39d;
             color: white;
             border: none;
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
-            margin-left: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        #theme-toggle:hover {
+            background: #7fd1bd;
+            transform: scale(1.05);
         }
         
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #cbd5e1;
             font-weight: 500;
             transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        body.light-mode nav a {
+            color: #333;
         }
         
         nav a:hover {
+            color: #7fd1bd;
+            background: rgba(127, 209, 189, 0.1);
+        }
+        
+        body.light-mode nav a:hover {
             color: #4f6d7a;
+            background: rgba(79, 109, 122, 0.1);
         }
         
         /* Hero Section */
         .hero {
-            background: white;
+            background: #2a3240;
             border-radius: 15px;
             padding: 60px 40px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
+        }
+        
+        body.light-mode .hero {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .hero h1 {
             font-size: 48px;
-            color: #333;
+            color: #e5e7eb;
             margin-bottom: 10px;
+        }
+        
+        body.light-mode .hero h1 {
+            color: #333;
         }
         
         .hero .subtitle {
             font-size: 24px;
-            color: #4f6d7a;
+            color: #8fb3c1;
             margin-bottom: 20px;
+        }
+        
+        body.light-mode .hero .subtitle {
+            color: #4f6d7a;
         }
         
         .hero p {
             font-size: 16px;
-            color: #666;
+            color: #cbd5e1;
             max-width: 600px;
             margin: 0 auto 30px;
+        }
+        
+        body.light-mode .hero p {
+            color: #666;
         }
         
         .cta-buttons {
@@ -148,23 +203,36 @@
         
         /* Sections */
         section {
-            background: white;
+            background: #2a3240;
             border-radius: 15px;
             padding: 40px;
             margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.light-mode section {
+            background: white;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         section h2 {
             font-size: 32px;
-            color: #333;
+            color: #e5e7eb;
             margin-bottom: 30px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
+        body.light-mode section h2 {
+            color: #333;
+        }
+        
         section h2 i {
+            color: #8fb3c1;
+        }
+        
+        body.light-mode section h2 i {
             color: #4f6d7a;
         }
         
@@ -627,6 +695,45 @@
         </footer>
     </div>
 
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Check for saved theme preference, default to dark
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            
+            if (isLight) {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
