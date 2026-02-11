@@ -317,6 +317,11 @@
         </footer>
     </div>
 
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
@@ -353,6 +358,24 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+            });
+        });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
