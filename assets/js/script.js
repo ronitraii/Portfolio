@@ -370,7 +370,7 @@ const initTerminal = () => {
         break;
         
       case 'about':
-        addLine(`Entry-level cybersecurity professional with hands-on SOC, penetration testing, and digital forensics experience. Ranked in the <span class="term-green">Top 1.5% nationally</span> in HEC NCAT 2026. Specializes in building machine learning-powered intrusion detection and automating audit workflows.`);
+        addLine(`Entry-level cybersecurity professional with hands-on SOC, penetration testing, and digital forensics experience. Ranked in the <span class="term-green">Top 1.5% nationally</span> in HEC NSCT 2026. Specializes in building machine learning-powered intrusion detection and automating audit workflows.`);
         break;
         
       case 'skills':
@@ -415,7 +415,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.45 seconds`);
 <span class="term-cyan">  | o o |  </span> ----------------------
 <span class="term-cyan">   \---/   </span> OS: Sukkur IBA Linux x86_64
 <span class="term-cyan">    / \    </span> Role: SOC Analyst / Pen Tester / Forensics
-<span>             </span> NCAT Rank: Top 1.5% (98.5th Percentile)
+<span>             </span> NSCT Rank: Top 1.5% (98.5th Percentile)
 <span>             </span> IDS Accuracy: ~88% Threat Detection Accuracy
 <span>             </span> Shell: bash / python3 / javascript
 <span>             </span> Active Tasks: Incident Response & Automating Audits</div>`);
