@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="description" content="Ronit Rai – Portfolio in Cybersecurity, Digital Forensics, and AI for Security. Projects in IDS/IPS, threat intelligence, and image forgery detection.">
-    <meta name="keywords" content="Cybersecurity, AI Security, IDS, IPS, Digital Forensics, Threat Intelligence, Deepfake Detection, Portfolio, Ronit Rai">
-    <title>Ronit Rai - Cybersecurity & AI Research Portfolio</title>
+    <meta name="description" content="Ronit Rai – SOC Analyst, Penetration Tester & Digital Forensics professional. Hands-on experience in threat detection, ML-powered IDS, and security automation.">
+    <meta name="keywords" content="SOC Analyst, Penetration Testing, Digital Forensics, Cybersecurity, IDS, IPS, Threat Intelligence, SIEM, Splunk, Ronit Rai">
+    <title>Ronit Rai - SOC Analyst · Penetration Tester · Digital Forensics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -13,14 +16,22 @@
     <div class="container">
         <!-- Header -->
         <header>
+            <div class="telemetry-bar">
+                <div class="telemetry-item"><span class="status-dot secure-dot"></span> SEC_STATUS: <span class="highlight-mono">SECURE</span></div>
+                <div class="telemetry-item"><i class="fas fa-network-wired"></i> PORT_INT: <span class="highlight-mono">INTEGRITY_OK</span></div>
+                <div class="telemetry-item"><i class="fas fa-tachometer-alt"></i> LATENCY: <span id="telemetry-ping" class="highlight-mono">14ms</span></div>
+                <div class="telemetry-item"><i class="fas fa-clock"></i> UTC_TIME: <span id="telemetry-time" class="highlight-mono">00:00:00 UTC</span></div>
+                <div class="telemetry-item telemetry-mode"><i class="fas fa-shield-alt"></i> MONITOR: <span class="highlight-mono">ACTIVE</span></div>
+            </div>
             <nav>
                 <div class="logo">Ronit Rai</div>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
+                    <li><a href="#competencies">Competencies</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
@@ -31,8 +42,38 @@
         <!-- Hero Section -->
         <div class="hero">
             <h1>Ronit Rai</h1>
-            <p class="subtitle">Cybersecurity Expert & Machine Learning Researcher</p>
-            <p>Building AI-powered security systems and threat intelligence platforms. Specializing in deep learning for digital forensics, penetration testing, and malware detection.</p>
+            <p class="subtitle">SOC Analyst · Penetration Tester · Digital Forensics</p>
+            <p>Entry-level cybersecurity professional with hands-on SOC, penetration testing, and digital forensics experience. Built ML-powered threat detection systems and automated security tooling. Top 1.5% nationally — HEC NCAT 2026.</p>
+            
+            <!-- Terminal Console -->
+            <div class="terminal-console">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="term-btn close"></span>
+                        <span class="term-btn minimize"></span>
+                        <span class="term-btn maximize"></span>
+                    </div>
+                    <div class="terminal-title">guest@ronit-sec-term:~</div>
+                    <div class="terminal-status">ONLINE</div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-line"><span class="term-prompt">ronit-sec-term:~$</span> neofetch</div>
+                    <div class="terminal-output"><span class="term-cyan">   /---\   </span> <span class="term-bold">ronit@security-analyst</span>
+<span class="term-cyan">  | o o |  </span> ----------------------
+<span class="term-cyan">   \---/   </span> OS: Sukkur IBA Linux x86_64
+<span class="term-cyan">    / \    </span> Role: SOC Analyst / Pen Tester / Forensics
+<span>             </span> NCAT Rank: Top 1.5% (98.5th Percentile)
+<span>             </span> IDS Accuracy: ~88% Threat Detection Accuracy
+<span>             </span> Shell: bash / python3 / javascript
+<span>             </span> Active Tasks: Incident Response & Automating Audits</div>
+                    <div class="terminal-line" id="terminal-boot-msg"><span class="term-prompt">ronit-sec-term:~$</span> <span class="term-green">System boot complete. Type 'help' to see active command options.</span></div>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="term-prompt">ronit-sec-term:~$</span>
+                    <input type="text" id="terminal-input" placeholder="type 'help' here..." autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="assets/documents/cv/Ronit_Rai_Resume.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
@@ -44,26 +85,29 @@
             <h2><i class="fas fa-user"></i> About Me</h2>
             <div class="about-content">
                 <div>
-                    <p>I'm a cybersecurity researcher and machine learning enthusiast pursuing advanced studies in cybersecurity. My work focuses on applying cutting-edge AI techniques to solve real-world security challenges.</p>
-                    <p>With expertise in deep learning, threat intelligence, and penetration testing, I develop practical solutions for digital forensics, malware detection, and vulnerability assessment.</p>
-                    <p>I'm passionate about building tools that make cybersecurity more effective and accessible, from image forgery detection systems to comprehensive threat intelligence platforms.</p>
+                    <p>I'm an entry-level cybersecurity professional with hands-on SOC, penetration testing, and digital forensics experience across three internships. I build ML-powered threat detection systems and automated security tooling in Python.</p>
+                    <p>My expertise spans SOC monitoring, incident response, vulnerability assessment, and MITRE ATT&CK — backed by proficiency with tools like Kali Linux, Burp Suite, Wireshark, Splunk/SIEM, Autopsy, and Volatility.</p>
+                    <p>Ranked in the <strong>Top 1.5% nationally</strong> — HEC NCAT 2026 (73/100, 98.5th percentile, 33,000+ candidates across 190 universities). Currently pursuing a BS in Computer Science at Sukkur IBA University.</p>
                 </div>
                 <img src="assets/images/profile/img.jpg" alt="Profile" class="profile-image">
             </div>
         </section>
 
-        <!-- Research Interests Section -->
-        <section id="research">
-            <h2><i class="fas fa-lightbulb"></i> Research Interests</h2>
-            <p class="section-description">Areas of focus for Master's studies in Cybersecurity and AI</p>
+        <!-- Core Competencies Section -->
+        <section id="competencies">
+            <h2><i class="fas fa-lightbulb"></i> Core Competencies</h2>
+            <p class="section-description">Key areas of expertise in cybersecurity and threat intelligence</p>
             <div class="research-tags">
-                <span class="research-tag">Adversarial Machine Learning</span>
+                <span class="research-tag">SOC Monitoring</span>
+                <span class="research-tag">Incident Response</span>
+                <span class="research-tag">Threat Hunting</span>
+                <span class="research-tag">Penetration Testing</span>
                 <span class="research-tag">Digital Forensics</span>
-                <span class="research-tag">Cloud Security</span>
-                <span class="research-tag">Deepfake / Image Forgery Detection</span>
-                <span class="research-tag">AI for Cybersecurity</span>
-                <span class="research-tag">Intrusion Detection & Prevention (IDS/IPS)</span>
-                <span class="research-tag">AI-driven Threats & Data Safety</span>
+                <span class="research-tag">Vulnerability Assessment</span>
+                <span class="research-tag">MITRE ATT&CK</span>
+                <span class="research-tag">IDS/IPS</span>
+                <span class="research-tag">Malware Analysis</span>
+                <span class="research-tag">SIEM Log Analysis</span>
             </div>
         </section>
 
@@ -72,28 +116,20 @@
             <h2><i class="fas fa-code"></i> Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Python & ML</h3>
-                    <p>PyTorch, TensorFlow, Scikit-learn, Advanced ML architectures</p>
+                    <h3><i class="fas fa-shield-alt"></i> Security</h3>
+                    <p>SOC Monitoring, Incident Response, Threat Hunting, Vulnerability Assessment, Digital Forensics, MITRE ATT&CK</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Cybersecurity</h3>
-                    <p>Penetration Testing, Malware Analysis, IDS/IPS, Threat Intelligence</p>
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <p>Kali Linux, Burp Suite, Wireshark, Nmap, Metasploit, Autopsy, Volatility, Splunk/SIEM</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Deep Learning</h3>
-                    <p>CNNs, GANs, Ensemble Methods, Computer Vision</p>
+                    <h3><i class="fas fa-terminal"></i> Programming</h3>
+                    <p>Python, Bash, SQL, JavaScript, C/C++</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Web Development</h3>
-                    <p>Flask, Next.js, React, REST APIs, Docker</p>
-                </div>
-                <div class="skill-card">
-                    <h3>DevOps & CI/CD</h3>
-                    <p>GitHub Actions, Docker, Containerization, Automated Testing</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Digital Forensics</h3>
-                    <p>Image Analysis, Deepfake Detection, Manipulation Detection</p>
+                    <h3><i class="fas fa-book"></i> Concepts</h3>
+                    <p>OWASP Top 10, IDS/IPS, Malware Analysis, Network Forensics, SIEM Log Analysis, CSRF, SSL/TLS</p>
                 </div>
             </div>
         </section>
@@ -105,16 +141,32 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <h4>Nuexus Technologies · Remote · Sep 2025 – Dec 2025</h4>
+                        <p>Focused on enumeration, exploitation, and defensive techniques through hands-on challenges and network reconnaissance; built automation to accelerate assessments.</p>
+                        <ul class="experience-highlights">
+                            <li>Completed 10+ Hack The Box challenges across enumeration, exploitation, and defensive techniques <span class="mitre-badge" data-tooltip="TA0002: Execution - Exploitation and defensive vectors">MITRE TA0002</span></li>
+                            <li>Built a Python port/service scanner, reducing manual assessment time by 60%; documented findings with remediation steps <span class="mitre-badge" data-tooltip="T1595.002: Active Scanning (Vulnerability & Service Scanning)">MITRE T1595.002</span></li>
+                            <li>Conducted network reconnaissance using Nmap to identify open ports, services, and attack surfaces <span class="mitre-badge" data-tooltip="T1046: Network Service Discovery (Enumeration)">MITRE T1046</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <div class="timeline-content">
                         <h3>Digital Forensics Intern</h3>
                         <h4>Cyborts · Remote · Jul 2025</h4>
-                        <p>Investigated the digital forensics lifecycle including evidence collection, preservation, and analysis; examined system artifacts to reconstruct incidents while applying chain-of-custody procedures.</p>
+                        <p>Performed disk and memory forensics with Autopsy and Volatility; reconstructed incidents from deleted files and timeline artifacts.</p>
                         <ul class="experience-highlights">
-                            <li>Investigated evidence collection, preservation, and analysis workflows</li>
-                            <li>Examined system artifacts to reconstruct security incidents</li>
-                            <li>Applied chain-of-custody procedures for evidentiary integrity</li>
+                            <li>Performed disk and memory forensics with Autopsy and Volatility <span class="mitre-badge" data-tooltip="T1070: Indicator Removal - Forensic recovery & volatile analysis">MITRE T1070</span></li>
+                            <li>Reconstructed incidents from deleted files and timeline artifacts <span class="mitre-badge" data-tooltip="TA0007: Discovery - Analyzing post-exploitation system changes">MITRE TA0007</span></li>
+                            <li>Prepared forensic reports following chain-of-custody and evidence-handling procedures</li>
                         </ul>
                     </div>
                 </div>
@@ -124,29 +176,12 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="timeline-content">
-                        <h3>Cybersecurity Intern</h3>
+                        <h3>Security Intern</h3>
                         <h4>Developers Hub Corporation · Remote · Apr 2025 – May 2025</h4>
-                        <p>Assessed web applications for OWASP Top 10 vulnerabilities, performed penetration testing, and conducted security audits and code reviews to improve security posture.</p>
+                        <p>Tested web applications for OWASP Top 10 vulnerabilities (SQLi, XSS, auth flaws) using Burp Suite and Kali Linux.</p>
                         <ul class="experience-highlights">
-                            <li>Assessed apps for OWASP Top 10 (SQLi, XSS, etc.)</li>
-                            <li>Performed pentesting with Burp Suite, Wireshark, and Kali Linux</li>
-                            <li>Conducted security audits and code reviews to identify vulnerabilities</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Cybersecurity Intern</h3>
-                        <h4>Nuexus Technologies · Remote · Sep 2025 – Dec 2025</h4>
-                        <p>Focused on enumeration, exploitation, and defensive techniques through hands-on challenges and network reconnaissance; built automation to accelerate assessments.</p>
-                        <ul class="experience-highlights">
-                            <li>Completed 10+ Hack The Box challenges (enum, exploitation, defense)</li>
-                            <li>Conducted network reconnaissance using Nmap (ports/services)</li>
-                            <li>Developed Python-based port scanner reducing manual time by 60%</li>
+                            <li>Tested web applications for OWASP Top 10 vulnerabilities (SQLi, XSS, auth flaws) using Burp Suite and Kali Linux <span class="mitre-badge" data-tooltip="T1190: Exploit Public-Facing Application (OWASP Web Vulnerabilities)">MITRE T1190</span></li>
+                            <li>Assisted in secure code reviews and produced structured vulnerability reports with remediation guidance</li>
                         </ul>
                     </div>
                 </div>
@@ -161,58 +196,74 @@
             <div class="project-category">
                 <h3 class="category-title"><i class="fas fa-shield-alt"></i> Cybersecurity & Digital Forensics</h3>
                 <div class="projects-grid">
-                    <!-- GitHub Project 1: Image Manipulation Detection -->
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <h3>AI-Based Image Manipulation Detection <span class="project-badge">GitHub</span></h3>
-                        <p>Production-ready deep learning system detecting image forgery, deepfakes, and face manipulation. Features CNN-based analysis with PyTorch, Flask REST API, Next.js frontend, Docker containerization, and GitHub Actions CI/CD pipeline.</p>
-                        <div class="project-tags">
-                            <span class="tag">PyTorch</span>
-                            <span class="tag">CNN</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">13 Commits</span>
-                        </div>
-                        <a href="https://github.com/ronitraii/image-manipulation-detection" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
-                    </div>
-
-                    <!-- GitHub Project 2: Web Vulnerability Scanner -->
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Web Vulnerability Scanner <span class="project-badge">GitHub</span></h3>
-                        <p>Comprehensive penetration testing framework for identifying web application vulnerabilities. Detects SQL injection, XSS, CSRF, security headers. Tested against DVWA with detailed reporting capabilities.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Penetration Testing</span>
-                            <span class="tag">DVWA</span>
-                            <span class="tag">Web Security</span>
-                            <span class="tag">9 Commits</span>
-                        </div>
-                        <a href="https://github.com/ronitraii/web-vulnerability-scanner" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
-                    </div>
-
-                    <!-- GitHub Project 3: Threat Intelligence Hub -->
+                    <!-- GitHub Project 1: Threat Intelligence Hub -->
                     <div class="project-card">
                         <div class="project-icon">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3>Threat Intelligence Hub <span class="project-badge project-badge-masters">Master's Ready</span></h3>
-                        <p>Research-grade 4-module threat detection platform. Modules: Network IDS (95% accuracy), Enhanced Log Analysis, Malware Detection (91.5%), Incident Response Dashboard. Built over 1.5 months with REST API and web dashboard.</p>
+                        <h3>Threat Intelligence Hub <span class="project-badge">GitHub</span><span class="mitre-badge" data-tooltip="T1020: Automated Network Intrusion & Threat Intel monitoring">MITRE T1020</span></h3>
+                        <p>4-module platform: Network IDS (~88% accuracy), log analysis, malware detection (~87% accuracy), and incident response dashboard. REST API with real-time alert visualisation; built over 1.5 months using ensemble ML methods.</p>
                         <div class="project-tags">
+                            <span class="tag">Python</span>
                             <span class="tag">PyTorch</span>
-                            <span class="tag">Ensemble ML</span>
-                            <span class="tag">IDS/IPS</span>
-                            <span class="tag">Threat Analysis</span>
-                            <span class="tag">Flask API</span>
-                            <span class="tag">11 Commits</span>
+                            <span class="tag">Isolation Forest</span>
+                            <span class="tag">Autoencoders</span>
+                            <span class="tag">Flask</span>
                         </div>
                         <a href="https://github.com/ronitraii/threat-intelligence-hub" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+                    </div>
+
+                    <!-- GitHub Project 2: AI-Based Image Manipulation Detection -->
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>AI Manipulation Detection <span class="project-badge">GitHub</span><span class="mitre-badge" data-tooltip="T1588.002: Identifies Forge Artifacts & deepfakes">MITRE T1588.002</span></h3>
+                        <p>Forensic platform detecting deepfakes and image forgery; containerised with Docker, deployed via GitHub Actions CI/CD. Features ResNet50 and DeepLabV3+ architectures with Flask REST API and Next.js frontend.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">ResNet50</span>
+                            <span class="tag">DeepLabV3+</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                        <a href="https://github.com/ronitraii/image-manipulation-detection" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+                    </div>
+
+                    <!-- GitHub Project 3: Web Vulnerability Scanner -->
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Web Vulnerability Scanner <span class="project-badge">GitHub</span><span class="mitre-badge" data-tooltip="T1595.002: Active Scanning (Automated web vulnerability assessments)">MITRE T1595.002</span></h3>
+                        <p>Automated OWASP Top 10 scanner (SQLi, XSS, CSRF, headers, SSL); validated on DVWA with JSON/HTML severity reports. Built with Python and Flask for comprehensive web application security testing.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">DVWA</span>
+                            <span class="tag">OWASP Top 10</span>
+                            <span class="tag">Web Security</span>
+                        </div>
+                        <a href="https://github.com/ronitraii/web-vulnerability-scanner" target="_blank" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>BS Computer Science</h3>
+                        <h4>Sukkur IBA University · 2022 – 2026 (Expected)</h4>
+                        <p>Pursuing a Bachelor of Science in Computer Science with a focus on cybersecurity, machine learning, and software engineering.</p>
                     </div>
                 </div>
             </div>
@@ -224,13 +275,27 @@
             <div class="certificates-grid">
                 <div class="project-card">
                     <div class="project-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>HEC NCAT 2026 — Top 1.5%</h3>
+                    <p>Scored 73/100 · 98.5th Percentile · Top 1.5% of 33,000+ candidates across 190 universities nationally.</p>
+                    <div class="project-tags">
+                        <span class="tag">98.5th Percentile</span>
+                        <span class="tag">33,000+ Candidates</span>
+                        <span class="tag">2026</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Google Cybersecurity Certificate</h3>
+                    <h3>Google Cybersecurity Professional Certificate</h3>
                     <p>Professional certificate in cybersecurity fundamentals, threat analysis, and security best practices.</p>
                     <div class="project-tags">
                         <span class="tag">Cybersecurity</span>
                         <span class="tag">Google</span>
+                        <span class="tag">2025</span>
                     </div>
                     <a href="assets/documents/certificates/google-cybersecurity.png" target="_blank" class="project-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
@@ -239,11 +304,12 @@
                     <div class="project-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Google Cloud Security</h3>
+                    <h3>Google Cloud Security Certificate</h3>
                     <p>Specialized certification in cloud security, infrastructure protection, and secure cloud deployment.</p>
                     <div class="project-tags">
                         <span class="tag">Cloud Security</span>
                         <span class="tag">GCP</span>
+                        <span class="tag">2025</span>
                     </div>
                     <a href="assets/documents/certificates/google-cloud-security.pdf" target="_blank" class="project-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
@@ -257,6 +323,7 @@
                     <div class="project-tags">
                         <span class="tag">Digital Forensics</span>
                         <span class="tag">Internship</span>
+                        <span class="tag">2025</span>
                     </div>
                     <a href="assets/documents/certificates/cyborts-digital-forensics-internship.pdf" target="_blank" class="project-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
@@ -270,6 +337,7 @@
                     <div class="project-tags">
                         <span class="tag">Pentesting</span>
                         <span class="tag">Security Audits</span>
+                        <span class="tag">2025</span>
                     </div>
                     <a href="assets/documents/certificates/dhc-internship-certificate.pdf" target="_blank" class="project-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
@@ -283,6 +351,7 @@
                     <div class="project-tags">
                         <span class="tag">HTB Challenges</span>
                         <span class="tag">Python</span>
+                        <span class="tag">2025</span>
                     </div>
                     <a href="assets/documents/certificates/nuexus-cybersecurity-internship.pdf" target="_blank" class="project-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
@@ -296,7 +365,7 @@
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <h3>Email</h3>
-                    <p><a href="mailto:ronitganglani5@gmail.com" class="contact-link">ronitganglani5@gmail.com</a></p>
+                    <p><a href="mailto:ronit.raii2004@gmail.com" class="contact-link">ronit.raii2004@gmail.com</a></p>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-github"></i>
@@ -308,77 +377,32 @@
                     <h3>LinkedIn</h3>
                     <p><a href="https://www.linkedin.com/in/ronitganglani/" target="_blank" class="contact-link">Ronit Rai</a></p>
                 </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>Portfolio</h3>
+                    <p><a href="https://ronit-rai-portfolio.vercel.app" target="_blank" class="contact-link">ronit-rai-portfolio.vercel.app</a></p>
+                </div>
+            </div>
+
+            <!-- Recruiter Decryption Challenge -->
+            <div class="decryption-challenge">
+                <h3><i class="fas fa-unlock-alt"></i> Recruiter Challenge: Decrypt the Hash</h3>
+                <p>Verify my coding & crypto basics. Decrypt this ciphertext to reveal a hidden greeting: <br>
+                <code class="challenge-cipher">U2VjdXJpdHlSZWNydWl0ZXJfMjAyNg==</code></p>
+                <div class="challenge-inputs">
+                    <input type="text" id="challenge-input" placeholder="Enter decrypted text..." autocomplete="off">
+                    <button id="challenge-btn" class="btn btn-primary">Submit Flag</button>
+                </div>
+                <div id="challenge-result" class="challenge-result"></div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Ronit Rai. All rights reserved. | Cybersecurity & Machine Learning</p>
+            <p>&copy; 2026 Ronit Rai. All rights reserved. | SOC Analyst · Penetration Tester · Digital Forensics</p>
         </footer>
     </div>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" class="scroll-to-top" title="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        
-        // Check for saved theme preference, default to dark
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.classList.add('light-mode');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        // Toggle theme on button click
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            const isLight = body.classList.contains('light-mode');
-            
-            if (isLight) {
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', 'light');
-            } else {
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-        
-        // Smooth scroll for nav links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Scroll to top button functionality
-        const scrollToTopBtn = document.getElementById('scroll-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-        
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

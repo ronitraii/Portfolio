@@ -17,36 +17,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== Dark Mode Toggle =====
+// ===== Theme Toggle (Default to Dark Mode) =====
 const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
+const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
 
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
+if (themeToggle && themeIcon) {
+  // Check for saved theme preference, default to dark
+  const currentTheme = localStorage.getItem('theme') || 'dark';
 
-// Apply saved theme on page load
-if (currentTheme === 'dark') {
-  document.body.classList.add('dark-mode');
-  themeIcon.classList.remove('fa-moon');
-  themeIcon.classList.add('fa-sun');
-}
-
-// Toggle theme on button click
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  
-  // Update icon
-  if (isDarkMode) {
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
-    localStorage.setItem('theme', 'dark');
+  if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+    themeIcon.className = 'fas fa-moon';
   } else {
-    themeIcon.classList.remove('fa-sun');
-    themeIcon.classList.add('fa-moon');
-    localStorage.setItem('theme', 'light');
+    document.body.classList.remove('light-mode');
+    themeIcon.className = 'fas fa-sun';
   }
-});
+
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLightMode = document.body.classList.contains('light-mode');
+    
+    if (isLightMode) {
+      themeIcon.className = 'fas fa-moon';
+      localStorage.setItem('theme', 'light');
+    } else {
+      themeIcon.className = 'fas fa-sun';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
 
 // ===== Navbar Scroll Effect =====
 let lastScroll = 0;
@@ -289,9 +289,203 @@ window.addEventListener('load', () => {
   
   // Initialize mobile menu if needed
   createMobileMenu();
+
+  // Initialize security enhancements
+  initTelemetry();
+  initTerminal();
+  initChallenge();
   
   console.log('Portfolio loaded successfully!');
 });
+
+// ===== Cybersecurity Interactive Enhancements =====
+
+// 1. Live Telemetry setup
+const initTelemetry = () => {
+  const pingEl = document.getElementById('telemetry-ping');
+  const timeEl = document.getElementById('telemetry-time');
+  
+  if (!pingEl || !timeEl) return;
+  
+  // Update synchronized UTC time
+  const updateTime = () => {
+    const now = new Date();
+    const utcStr = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+    timeEl.textContent = utcStr;
+  };
+  
+  // Simulated latency variance
+  const updatePing = () => {
+    const randomPing = Math.floor(Math.random() * 15) + 10; // 10ms - 25ms
+    pingEl.textContent = `${randomPing}ms`;
+  };
+  
+  updateTime();
+  updatePing();
+  setInterval(updateTime, 1000);
+  setInterval(updatePing, 3000);
+};
+
+// 2. Interactive Terminal setup
+const initTerminal = () => {
+  const terminalInput = document.getElementById('terminal-input');
+  const terminalBody = document.getElementById('terminal-body');
+  
+  if (!terminalInput || !terminalBody) return;
+  
+  const addLine = (text, type = '') => {
+    const line = document.createElement('div');
+    line.className = 'terminal-line';
+    
+    if (type === 'command') {
+      line.innerHTML = `<span class="term-prompt">ronit-sec-term:~$</span> ${text}`;
+    } else {
+      line.innerHTML = text;
+    }
+    
+    terminalBody.appendChild(line);
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  };
+  
+  const handleCommand = (rawInput) => {
+    const input = rawInput.trim();
+    const parts = input.split(' ');
+    const cmd = parts[0].toLowerCase();
+    const args = parts.slice(1);
+    
+    addLine(rawInput, 'command');
+    
+    if (input === '') return;
+    
+    switch (cmd) {
+      case 'help':
+        addLine(`Available commands:<br>
+  <span class="term-cyan">about</span>       - Brief professional summary<br>
+  <span class="term-cyan">skills</span>      - Highlight technical skillset<br>
+  <span class="term-cyan">nmap</span>        - Run local port/service scan demonstration<br>
+  <span class="term-cyan">decrypt [str]</span> - Decrypt a Base64 string<br>
+  <span class="term-cyan">neofetch</span>     - System specifications profile<br>
+  <span class="term-cyan">contact</span>     - View secure/active contact details<br>
+  <span class="term-cyan">clear</span>       - Clear terminal history`);
+        break;
+        
+      case 'about':
+        addLine(`Entry-level cybersecurity professional with hands-on SOC, penetration testing, and digital forensics experience. Ranked in the <span class="term-green">Top 1.5% nationally</span> in HEC NCAT 2026. Specializes in building machine learning-powered intrusion detection and automating audit workflows.`);
+        break;
+        
+      case 'skills':
+        addLine(`[+] <span class="term-bold">Security:</span> SOC Monitoring, Incident Response, Threat Hunting, Vulnerability Assessment, Digital Forensics, MITRE ATT&CK<br>
+[+] <span class="term-bold">Tools:</span> Kali Linux, Burp Suite, Wireshark, Nmap, Metasploit, Autopsy, Volatility, Splunk/SIEM<br>
+[+] <span class="term-bold">Coding:</span> Python, Bash, SQL, JavaScript, C/C++`);
+        break;
+        
+      case 'nmap':
+        addLine(`<span class="term-yellow">Starting Nmap 7.92 ( https://nmap.org ) at ${new Date().toISOString().replace('T', ' ').substring(0, 19)}</span><br>
+Nmap scan report for localhost (127.0.0.1)<br>
+Host is up (0.00015s latency).<br>
+Not shown: 996 closed tcp ports (conn-refused)<br>
+PORT     STATE SERVICE  VERSION<br>
+22/tcp   open  ssh      OpenSSH 8.9p1 (Protocol 2.0)<br>
+80/tcp   open  http     Nginx 1.18.0<br>
+443/tcp  open  ssl/http Nginx 1.18.0 (SSL/TLS Active)<br>
+3306/tcp open  mysql    MySQL 8.0.28<br><br>
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>
+Nmap done: 1 IP address (1 host up) scanned in 0.45 seconds`);
+        break;
+        
+      case 'decrypt':
+        if (args.length < 1) {
+          addLine(`<span class="term-red">Error: missing argument. Usage: decrypt [base64_string]</span>`);
+        } else {
+          try {
+            const decoded = atob(args[0]);
+            addLine(`Decryption Successful! Result: <span class="term-green">${decoded}</span>`);
+            // Check if they solved the flag
+            if (args[0] === 'U2VjdXJpdHlSZWNydWl0ZXJfMjAyNg==') {
+              triggerChallengeSuccess();
+            }
+          } catch (e) {
+            addLine(`<span class="term-red">Error: Invalid Base64 payload encoding.</span>`);
+          }
+        }
+        break;
+        
+      case 'neofetch':
+        addLine(`<div class="terminal-output"><span class="term-cyan">   /---\   </span> <span class="term-bold">ronit@security-analyst</span>
+<span class="term-cyan">  | o o |  </span> ----------------------
+<span class="term-cyan">   \---/   </span> OS: Sukkur IBA Linux x86_64
+<span class="term-cyan">    / \    </span> Role: SOC Analyst / Pen Tester / Forensics
+<span>             </span> NCAT Rank: Top 1.5% (98.5th Percentile)
+<span>             </span> IDS Accuracy: ~88% Threat Detection Accuracy
+<span>             </span> Shell: bash / python3 / javascript
+<span>             </span> Active Tasks: Incident Response & Automating Audits</div>`);
+        break;
+        
+      case 'contact':
+        addLine(`Active communication channels:<br>
+  - Email: <span class="term-cyan">ronit.raii2004@gmail.com</span><br>
+  - GitHub: <span class="term-cyan">github.com/ronitraii</span><br>
+  - LinkedIn: <span class="term-cyan">linkedin.com/in/ronitganglani</span>`);
+        break;
+        
+      case 'clear':
+        terminalBody.innerHTML = '';
+        break;
+        
+      default:
+        addLine(`<span class="term-red">Command not found: '${cmd}'. Type 'help' to see list of options.</span>`);
+    }
+  };
+  
+  terminalInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const val = terminalInput.value;
+      handleCommand(val);
+      terminalInput.value = '';
+    }
+  });
+};
+
+// Helper function to update the contact section challenge directly from terminal solving
+const triggerChallengeSuccess = () => {
+  const resultEl = document.getElementById('challenge-result');
+  const inputEl = document.getElementById('challenge-input');
+  if (resultEl && inputEl) {
+    inputEl.value = 'SecurityRecruiter_2026';
+    resultEl.className = 'challenge-result challenge-success';
+    resultEl.innerHTML = '<i class="fas fa-check-circle"></i> FLAG_CAPTURED: ACCESS_GRANTED. <br>Congratulations! You decrypted the hash successfully. Let\'s secure the connection! Reach out directly: <a href="mailto:ronit.raii2004@gmail.com" style="color: #4fda9e; text-decoration: underline;">ronit.raii2004@gmail.com</a>';
+  }
+};
+
+// 3. Recruiter Challenge setup
+const initChallenge = () => {
+  const inputEl = document.getElementById('challenge-input');
+  const btnEl = document.getElementById('challenge-btn');
+  const resultEl = document.getElementById('challenge-result');
+  
+  if (!inputEl || !btnEl || !resultEl) return;
+  
+  const checkFlag = () => {
+    const val = inputEl.value.trim();
+    if (val === 'SecurityRecruiter_2026') {
+      resultEl.className = 'challenge-result challenge-success';
+      resultEl.innerHTML = '<i class="fas fa-check-circle"></i> FLAG_CAPTURED: ACCESS_GRANTED. <br>Congratulations! You decrypted the hash successfully. Let\'s secure the connection! Reach out directly: <a href="mailto:ronit.raii2004@gmail.com" style="color: #4fda9e; text-decoration: underline;">ronit.raii2004@gmail.com</a>';
+    } else if (val.toLowerCase() === 'securityrecruiter_2026') {
+      resultEl.className = 'challenge-result challenge-success';
+      resultEl.innerHTML = '<i class="fas fa-check-circle"></i> FLAG_CAPTURED (Case-sensitive mismatch resolved). <br>Access granted. Reach out directly: <a href="mailto:ronit.raii2004@gmail.com" style="color: #4fda9e; text-decoration: underline;">ronit.raii2004@gmail.com</a>';
+    } else {
+      resultEl.className = 'challenge-result challenge-error';
+      resultEl.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ACCESS_DENIED: Invalid flag decrypter. Hint: It is a Base64 encoding. Try decoding the string!';
+    }
+  };
+  
+  btnEl.addEventListener('click', checkFlag);
+  inputEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      checkFlag();
+    }
+  });
+};
 
 // ===== Page Load Performance =====
 window.addEventListener('load', () => {
